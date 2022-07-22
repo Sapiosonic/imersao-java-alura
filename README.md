@@ -24,11 +24,11 @@ Artigo na Alura sobre como usar VS Code para codar em Java. <https://www.alura.c
 
 ## Links API
 
-<https://raw.githubusercontent.com/alexfelipe/imersao-java/json/top250.json>
-<https://alura-filmes.herokuapp.com/conteudos>
-<https://api.mocki.io/v2/549a5d8b>
-<https://alura-imdb-api.herokuapp.com/movies>
-<https://mocki.io/v1/9a7c1ca9-29b4-4eb3-8306-1adb9d159060>
+* <https://raw.githubusercontent.com/alexfelipe/imersao-java/json/top250.json>
+* <https://alura-filmes.herokuapp.com/conteudos>
+* <https://api.mocki.io/v2/549a5d8b>
+* <https://alura-imdb-api.herokuapp.com/movies>
+* <https://mocki.io/v1/9a7c1ca9-29b4-4eb3-8306-1adb9d159060>
 
 ## Links APIs Alterantivas
 
