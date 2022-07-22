@@ -11,7 +11,10 @@ public class GeradorDeFigurinhas {
     BufferedImage imagemOriginal = ImageIO.read(new File("entrada/filme1.jpg"));
 
     // cria nova imagem em memória com transparência e com tamanho novo
-    
+    int largura = imagemOriginal.getWidth();
+    int altura = imagemOriginal.getHeight();
+    int novaAltura = altura + 200;
+    BufferedImage novaImagem = new BufferedImage(largura, novaAltura, BufferedImage.TRANSLUCENT);
 
     // copiar a imagem original pra novo imagem (em memória)
 
