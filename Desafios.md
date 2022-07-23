@@ -33,3 +33,15 @@
 9. Fazer com que o texto da figurinha seja personalizado de acordo com as classificações do IMDB.
 
 10. Desafio supremo: usar alguma biblioteca de manipulação de imagens como OpenCV pra extrair imagem principal e contorná-la. <https://github.com/opencv-java>
+
+## Desafios Aula 3
+
+1. Transformar a classe que representa os conteúdos em um Record, disponível a partir do Java 16
+
+2. Criar as suas próprias exceções e usá-las na classe que implementa o cliente HTTP
+
+3. Usar recursos do Java 8 e posterior, como Streams e Lambdas, para mapear uma lista em uma outra
+
+4. Criar uma Enum que une, como configurações, a URL da API e o extrator utilizado
+
+5. Desafio supremo: consumir outras APIs que contém imagens, como a da Marvel, que é bem diferente. Repositório com APIs públicas <https://github.com/public-apis/public-apis>
