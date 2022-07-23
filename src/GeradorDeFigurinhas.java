@@ -1,24 +1,20 @@
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.net.URL;
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
-
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.InputStream;
+
+import javax.imageio.ImageIO;
 
 public class GeradorDeFigurinhas {
 
-   /**
- * @throws Exception
- */
-public void cria() throws Exception{
+
+public void cria(InputStream inputStream, String nomeArquivo) throws Exception{
 
     // leitura da imagem
     //InputStream inputStream = new FileInputStream(new File("entrada/filme1.jpg"));
-    InputStream inputStream = new URL("https://imersao-java-apis.s3.amazonaws.com/TopMovies_1.jpg").openStream();
+    //InputStream inputStream = new URL("https://imersao-java-apis.s3.amazonaws.com/TopMovies_1.jpg").openStream();
     BufferedImage imagemOriginal = ImageIO.read(inputStream);
 
     // cria nova imagem em memória com transparência e com tamanho novo
@@ -40,11 +36,7 @@ public void cria() throws Exception{
     graphics.drawString("TOPZERA", 175, novaAltura - 100);
 
     // escrever a nova imagem em um arquivo
-    ImageIO.write(novaImagem, "png", new File("saida/figurinha.png"));
+    ImageIO.write(novaImagem, "png", new File(nomeArquivo));
    }
 
-   public static void main(String[] args) throws Exception {
-    var geradora = new GeradorDeFigurinhas();
-    geradora.cria();
-   }
 }
