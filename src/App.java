@@ -1,42 +1,39 @@
 import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
-import java.util.Map;
-
 public class App {
     public static void main(String[] args) throws Exception {
         
-        //fazer uma conexão HTTP e buscar o top 250 filmes
-        //String url = "https://api.mocki.io/v2/549a5d8b";
-        String url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2022-07-19&end_date=2022-07-20";
+        // fazer uma conexão HTTP e buscar os top 250 filmes
 
+        // String url = "https://imdb-api.com/en/API/Top250Movies/k_0ojt0yvm";
+        String url =
+        "https://raw.githubusercontent.com/alura-cursos/imersao-java/api/TopMovies.json";
+        ExtratorDeConteudo extrator = new ExtratorDeConteudoDoIMDB();
+
+        // String url =
+        // "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2022-06-12&end_date=2022-06-14";
+        //String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java/api/NASA-APOD.json";
+        //ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
 
         var http = new ClienteHttp();
         String json = http.buscaDados(url);
-       
 
-        //pegar só os dados que nos interessam (título, poster, classificação)
-        var parser = new JsonParser();
-        List<Map<String, String>> listaDeConteudos = parser.parse(json);
-  
-        //exibir e manipular os dados
-        var geradora = new GeradorDeFigurinhas();
-        for (Map<String,String> conteudo : listaDeConteudos){
-            //for(int i = 0; i < 10; i++){
-                //Map<String,String> filme = listaDeConteudos.get(i);
+        // exibir e manipular os dados
+        List<Conteudo> conteudos = extrator.extraiConteudos(json);
 
+        var geradora = new GeradoraDeFigurinhas();
 
-            String urlImagem = conteudo.get("url");
-            //.replaceAll("(@+)(.*).jpg$", "$1.jpg");
-                //conteudo.get("image");
-                
-            String titulo = conteudo.get("title");
-            InputStream inputStream = new URL(urlImagem).openStream();
-            String nomeArquivo = "saida/" + titulo + ".png";
+        for (int i = 0; i < 3; i++) {
+
+            Conteudo conteudo = conteudos.get(i);
+
+            InputStream inputStream = new URL(conteudo.getUrlImagem()).openStream();
+            String nomeArquivo = "saida/" + conteudo.getTitulo() + ".png";
 
             geradora.cria(inputStream, nomeArquivo);
 
-            System.out.println(titulo);
+            System.out.println(conteudo.getTitulo());
             System.out.println();
         }
     }

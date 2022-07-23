@@ -58,3 +58,13 @@
 * Primeira aula do curso “Java Polimorfismo: entenda herança e interfaces” da Alura. <https://www.alura.com.br/conteudo/java-heranca-interfaces-polimorfismo>
 
 * Apêndice da apostila “Java e Orientação a Objetos” da Alura sobre o pacote java.io que explica com mais detalhes a abstração InputStream. <https://www.alura.com.br/apostila-java-orientacao-objetos/apendice-pacote-java-io>
+
+
+## Links da Terceira Aula
+
+* Documentação das APIs da NASA. <https://api.nasa.gov/>
+* API da Foto Astronômica do dia da NASA. <https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY>
+* Artigo na Alura “Como não aprender Java e Orientação a Objetos: getters e setters”. <https://www.alura.com.br/artigos/nao-aprender-oo-getters-e-setters>
+* Livro “Design Patterns”, de 1994, que descreve soluções comuns para problemas recorrentes de como organizar seu código.
+* Livro “Refactoring”, de 1999, que cataloga maneiras sistemáticas de melhorar o código sem modificar o que é feito.
+* Artigo na Alura “Como não aprender Java e Orientação a Objetos: herança”. <https://www.alura.com.br/artigos/como-nao-aprender-orientacao-a-objetos-heranca>
