@@ -1,4 +1,7 @@
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.net.URL;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
@@ -14,7 +17,9 @@ public class GeradorDeFigurinhas {
 public void cria() throws Exception{
 
     // leitura da imagem
-    BufferedImage imagemOriginal = ImageIO.read(new File("entrada/filme1.jpg"));
+    //InputStream inputStream = new FileInputStream(new File("entrada/filme1.jpg"));
+    InputStream inputStream = new URL("https://imersao-java-apis.s3.amazonaws.com/TopMovies_1.jpg").openStream();
+    BufferedImage imagemOriginal = ImageIO.read(inputStream);
 
     // cria nova imagem em memória com transparência e com tamanho novo
     int largura = imagemOriginal.getWidth();
