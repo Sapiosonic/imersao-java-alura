@@ -14,6 +14,8 @@ public class App {
         //fazer uma conexão HTTP e buscar o top 250 filmes
         //String url = "https://api.mocki.io/v2/549a5d8b";
         String url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2022-07-19&end_date=2022-07-20";
+
+
         URI endereco = URI.create(url);
         var client = HttpClient.newHttpClient();
         var request = HttpRequest.newBuilder(endereco).GET().build();
@@ -23,20 +25,20 @@ public class App {
 
         //pegar só os dados que nos interessam (título, poster, classificação)
         var parser = new JsonParser();
-        List<Map<String, String>> listaDeFilmes = parser.parse(body);
+        List<Map<String, String>> listaDeConteudos = parser.parse(body);
   
         //exibir e manipular os dados
         var geradora = new GeradorDeFigurinhas();
-        for (Map<String,String> filme : listaDeFilmes){
+        for (Map<String,String> conteudo : listaDeConteudos){
             //for(int i = 0; i < 10; i++){
-                //Map<String,String> filme = listaDeFilmes.get(i);
+                //Map<String,String> filme = listaDeConteudos.get(i);
 
 
-            String urlImagem = filme.get("url");
+            String urlImagem = conteudo.get("url");
             //.replaceAll("(@+)(.*).jpg$", "$1.jpg");
-                //filme.get("image");
+                //conteudo.get("image");
                 
-            String titulo = filme.get("title");
+            String titulo = conteudo.get("title");
             InputStream inputStream = new URL(urlImagem).openStream();
             String nomeArquivo = "saida/" + titulo + ".png";
 
